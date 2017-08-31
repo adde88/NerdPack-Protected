@@ -1,7 +1,6 @@
 local n_name, gbl = ...
 local NeP = _G.NeP
-local C_Timer = _G.C_Timer
-local StaticPopup1 = _G.StaticPopup1
+
 local noop = function() end
 gbl.version = 2.0
 gbl.unlocked = false

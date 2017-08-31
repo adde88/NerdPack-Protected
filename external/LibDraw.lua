@@ -69,7 +69,7 @@ function LibDraw.SetWidth(w)
 end
 
 function LibDraw.Line(sx, sy, sz, ex, ey, ez)
-	if not IsHackEnabled then return end
+	if not HackEnabled then return end
 
 	local sx, sy = WorldToScreen(sx, sy, sz)
 	local ex, ey = WorldToScreen(ex, ey, ez)
@@ -139,7 +139,7 @@ end
 
 function LibDraw.Draw2DLine(sx, sy, ex, ey)
 
-	if not IsHackEnabled or not sx or not sy or not ex or not ey then return end
+	if not HackEnabled or not sx or not sy or not ex or not ey then return end
 
 	local L = tremove(LibDraw.lines) or false
 	if L == false then
@@ -233,7 +233,7 @@ function LibDraw.Texture(config, x, y, z, alphaA)
 	local left, right, top, bottom, scale =  config.left, config.right, config.top, config.bottom, config.scale
 	local alpha = config.alpha or alphaA
 
-	if not IsHackEnabled or not texture or not width or not height or not x or not y or not z then return end
+	if not HackEnabled or not texture or not width or not height or not x or not y or not z then return end
 	if not left or not right or not top or not bottom then
 		left = 0
 		right = 1

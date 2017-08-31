@@ -2,6 +2,6 @@
 ## Notes: A plugin for NerdPack.
 ## Dependencies: NerdPack
 ## Interface: 73000
-## Author: MrTheSoulz
+## Author: MrTheSoulz, Zylla
 
 files.xml

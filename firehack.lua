@@ -2,6 +2,8 @@ local _, gbl                    = ...
 local _G = _G
 local NeP = _G.NeP
 
+_G.InCombatLockdown = function() return UnitAffectingCombat("player") end
+
 gbl.FireHack = {}
 
 function gbl.FireHack.Load()

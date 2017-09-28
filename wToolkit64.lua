@@ -1,5 +1,4 @@
 local _, gbl = ...
-
 gbl.wToolkit64 = setmetatable(gbl.FireHack, {})
 
 function gbl.wToolkit64.Load()

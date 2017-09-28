@@ -1,11 +1,10 @@
 local _, gbl = ...
-local _G = _G
 local NeP = _G.NeP
-
--- Generic
 gbl.Generic = {}
+local f = gbl.Generic
+local g = gbl.gapis
 
-function gbl.Generic.Load()
+function f.Load()
 end
 
 gbl.validGround = {
@@ -13,35 +12,35 @@ gbl.validGround = {
 	["cursor"] = true
 }
 
-function gbl.Generic.Cast(spell, target)
-	_G.CastSpellByName(spell, target)
+function f.Cast(spell, target)
+	g.CastSpellByName(spell, target)
 end
 
-function gbl.Generic.CastGround(spell, target)
+function f.CastGround(spell, target)
 	if not gbl.validGround[target] then
 		target = "cursor"
 	end
-	gbl.Generic.Macro("/cast [@"..target.."]"..spell)
+	f.Macro("/cast [@"..target.."]"..spell)
 end
 
-function gbl.Generic.Macro(text)
-	_G.RunMacroText(text)
+function f.Macro(text)
+	g.RunMacroText(text)
 end
 
-function gbl.Generic.UseItem(name, target)
-	_G.UseItemByName(name, target)
+function f.UseItem(name, target)
+	g.UseItemByName(name, target)
 end
 
-function gbl.Generic.UseInvItem(name)
-	_G.UseInventoryItem(name)
+function f.UseInvItem(name)
+	g.UseInventoryItem(name)
 end
 
-function gbl.Generic.TargetUnit(target)
-	_G.TargetUnit(target)
+function f.TargetUnit(target)
+	g.TargetUnit(target)
 end
 
-function gbl.Generic.SpellStopCasting()
-	_G.SpellStopCasting()
+function f.SpellStopCasting()
+	g.SpellStopCasting()
 end
 
 gbl:AddUnlocker('Generic', {
@@ -49,6 +48,6 @@ gbl:AddUnlocker('Generic', {
 		pcall(_G.RunMacroText, '/run NeP.Unlocked = true')
 		return NeP.Unlocked ~= nil
 	end,
-	init = gbl.Generic.Load,
-	functions = gbl.Generic,
+	init = f.Load,
+	functions = f,
 })

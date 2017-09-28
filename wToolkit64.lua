@@ -1,22 +1,22 @@
 local _, gbl = ...
 gbl.wToolkit64 = setmetatable(gbl.FireHack, {})
+local f = gbl.wToolkit64
+local g = gbl.gapis
 
-function gbl.wToolkit64.Load()
+function f.Load()
 end
 
-function gbl.wToolkit64.ObjectCreator(a)
-	return _G.ObjectIsVisible(a) and _G.ObjectCreator(a)
+function f.ObjectCreator(a)
+	return g.ObjectIsVisible(a) and g.ObjectCreator(a)
 end
 
-function gbl.wToolkit64.GameObjectIsAnimating(a)
-	return _G.ObjectIsVisible(a) and _G.GameObjectIsAnimating(a)
+function f.GameObjectIsAnimating(a)
+	return g.ObjectIsVisible(a) and g.GameObjectIsAnimating(a)
 end
 
 gbl:AddUnlocker('wToolkit64', {
 	test = function() return _G.wToolkit64 end,
-	init = gbl.wToolkit64.Load,
+	init = f.Load,
 	prio = 2,
-	functions = gbl.Generic,
-	extended = gbl.wToolkit64,
-	om = gbl.FireHack_OM
+	functions = f
 })

@@ -1,6 +1,6 @@
 local _, gbl = ...
 local NeP = _G.NeP
-gbl.FireHack = setmetatable(gbl.Generic, {})
+gbl.FireHack = {unpack(gbl.Generic)}
 local f = gbl.FireHack
 local g = gbl.gapis
 

@@ -67,6 +67,11 @@ local lList = {
 	'UnitAffectingCombat',
 	'CancelPendingSpell',
 	'bit',
+	--EWT
+	'ObjectExists',
+	'CastAtPosition',
+	'ObjectCount',
+	'ObjectWithIndex',
 	--generic
 	'SpellStopCasting',
 	'TargetUnit',

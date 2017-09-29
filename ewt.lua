@@ -1,5 +1,5 @@
 local _, gbl = ...
-gbl.EWT = setmetatable(gbl.FireHack, {})
+gbl.EWT = {unpack(gbl.FireHack)}
 local NeP = _G.NeP
 local f = gbl.EWT
 

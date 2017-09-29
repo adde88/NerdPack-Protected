@@ -78,8 +78,6 @@ local lList = {
 
 function gbl.loadGlobals()
 	for i=1, #lList do
-		print("gbl.apis: ", gbl.gapis[lList[i]])
-		print("Global API's: ", _G[lList[i]])
 		gbl.gapis[lList[i]] = _G[lList[i]]
 	end
 end

@@ -1,4 +1,4 @@
-local _, gbl = ...
+local NeP = _G.NeP
 
 local bools = {
  ['TRUE'] = true,
@@ -18,11 +18,11 @@ end)
 --USAGE in CR:
 --{"%SetHack(HACK, ENABLE)", CONDITION}
 NeP.Actions:Add('sethack', function(eval)
-  local hack, bool = strsplit(',', eval[1].args, 2)
+  local hack, bool = _G.strsplit(',', eval[1].args, 2)
   bool = bool and bool:upper() or 'NIL'
   eval.exe = function()
-    if HackEnabled then
-      HackEnabled(hack, bools[bool])
+    if _G.HackEnabled then
+      _G.HackEnabled(hack, bools[bool])
       return true
     end
   end
@@ -32,8 +32,8 @@ end)
 --{"%SendKey(KEY)", CONDITION}
 NeP.Actions:Add('target', function(eval)
   eval.exe = function(eva)
-    if SendKey then
-      SendKey(eva[1].args)
+    if _G.SendKey then
+      _G.SendKey(eva[1].args)
       return true
     end
   end

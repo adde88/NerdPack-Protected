@@ -95,6 +95,13 @@ function gbl.FindUnlocker()
 	 end
 end
 
+function gbl.MergeTable(a,b)
+    for name, func in pairs(a) do
+        b[name] = func
+    end
+    return b
+end
+
 NeP.Interface:Add(n_name..' v:'..gbl.version, gbl.FindUnlocker)
 
 -- Delay until everything is ready

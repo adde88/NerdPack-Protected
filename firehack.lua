@@ -1,6 +1,6 @@
 local _, gbl = ...
 local NeP = _G.NeP
-gbl.FireHack = {gbl.MergeTable(gbl.Generic, {})}
+gbl.FireHack = gbl.MergeTable(gbl.Generic, {})
 local f = gbl.FireHack
 local g = gbl.gapis
 

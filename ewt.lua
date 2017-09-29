@@ -1,5 +1,5 @@
 local _, gbl = ...
-gbl.EWT = {unpack(gbl.FireHack)}
+gbl.EWT = {gbl.MergeTable(gbl.FireHack, {})}
 local NeP = _G.NeP
 local f = gbl.EWT
 

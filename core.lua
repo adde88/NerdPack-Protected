@@ -78,6 +78,8 @@ local lList = {
 
 function gbl.loadGlobals()
 	for i=1, #lList do
+		print("gbl.apis: ", gbl.gapis[lList[i]])
+		print("Global API's: ", _G[lList[i]])
 		gbl.gapis[lList[i]] = _G[lList[i]]
 	end
 end
@@ -93,6 +95,13 @@ function gbl.FindUnlocker()
 			return true
 		end
 	 end
+end
+
+function gbl.MergeTable(a,b)
+    for name, func in pairs(a) do
+        b[name] = func
+    end
+    return b
 end
 
 NeP.Interface:Add(n_name..' v:'..gbl.version, gbl.FindUnlocker)

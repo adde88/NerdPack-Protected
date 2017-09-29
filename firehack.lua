@@ -1,10 +1,11 @@
 local _, gbl = ...
 local NeP = _G.NeP
-gbl.FireHack = {unpack(gbl.Generic)}
+gbl.FireHack = {gbl.MergeTable(gbl.Generic, {})}
 local f = gbl.FireHack
 local g = gbl.gapis
 
 function f.Load()
+	print("F.Load fired")
 	g.ObjectCreator = _G.GetObjectDescriptorAccessor("CGUnitData::createdBy", _G.Type.GUID)
 	g.GameObjectIsAnimating = _G.GetObjectFieldAccessor(0x1C4, _G.Type.Bool)
 	-- FireHack b27 breaks InCombatLockdown, lets fix it

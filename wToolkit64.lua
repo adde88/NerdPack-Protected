@@ -1,5 +1,5 @@
 local _, gbl = ...
-gbl.wToolkit64 = {unpack(gbl.FireHack)}
+gbl.wToolkit64 = {gbl.MergeTable(gbl.FireHack, {})}
 local f = gbl.wToolkit64
 local g = gbl.gapis
 

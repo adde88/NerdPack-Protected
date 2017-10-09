@@ -7,15 +7,6 @@ local bools = {
 }
 
 --USAGE in CR:
---{"%target", CONDITION, TARGET}
-NeP.Actions:Add('target', function(eval)
-  eval.exe = function(eva)
-    NeP.Protected.TargetUnit(eva.target)
-    return true
-  end
-end)
-
---USAGE in CR:
 --{"%SetHack(HACK, ENABLE)", CONDITION}
 NeP.Actions:Add('sethack', function(eval)
   local hack, bool = _G.strsplit(',', eval[1].args, 2)
@@ -30,7 +21,7 @@ end)
 
 --USAGE in CR:
 --{"%SendKey(KEY)", CONDITION}
-NeP.Actions:Add('target', function(eval)
+NeP.Actions:Add('sendkey', function(eval)
   eval.exe = function(eva)
     if _G.SendKey then
       _G.SendKey(eva[1].args)
